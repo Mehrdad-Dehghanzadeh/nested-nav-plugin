@@ -1,4 +1,5 @@
 import { setNav } from './lib/nav';
+import { setNavItemAjax, setNavItem } from './lib/navItem';
 
 (function ($) {
   let pluginName = 'nestedNav';
@@ -18,6 +19,11 @@ import { setNav } from './lib/nav';
     init: function () {
       this.isAjax = !!this.settings.ajax;
       setNav(this.element);
+      if (this.isAjax) {
+        setNavItemAjax(this);
+      } else {
+        // setNavItem(this.element, this.settings.navItems);
+      }
     },
 
     nav: function () {

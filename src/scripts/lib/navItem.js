@@ -4,14 +4,17 @@ export function setNavItemAjax(that) {
   fetchItems(that, createTree);
 }
 
-export function setNavItem(element) {}
+// export function setNavItem(element, navItems) {}
 
 function createTree(items, node) {
   for (const item of items) {
-    node.append(templateNavItem(item))
+    const template = templateNavItem(item);
+    node.append(template);
 
     if ('children' in item && item.children.length) {
-      createTree(item.children, item)
+      const subNav = $('<ul class="nested-nav__submenu"></ul>');
+      template.append(subNav);
+      createTree(item.children, subNav);
     }
   }
 }
