@@ -1,0 +1,113 @@
+[
+  {
+    "Id": 1,
+    "Name": "group1",
+    "Code": 10,
+    "ChildrenList": [
+      {
+        "Id": 1004,
+        "Name": "sg1",
+        "Code": 10,
+        "ChildrenList": [
+          {
+            "Id": 1007,
+            "Name": "ssg1",
+            "Code": 10,
+            "ChildrenList": [
+              {
+                "Id": 1010,
+                "Name": "sssg1",
+                "Code": 10000,
+                "ChildrenList": [
+                  {
+                    "Id": 1012,
+                    "Name": "ssssg1",
+                    "Code": 20000,
+                    "ChildrenList": []
+                  },
+                  {
+                    "Id": 1013,
+                    "Name": "ssssg2",
+                    "Code": 20001,
+                    "ChildrenList": [
+                      {
+                        "Id": 1014,
+                        "Name": "ssssssg1",
+                        "Code": 30000,
+                        "ChildrenList": [
+                          {
+                            "Id": 1016,
+                            "Name": "fdasfre",
+                            "Code": 40000,
+                            "ChildrenList": []
+                          }
+                        ]
+                      },
+                      {
+                        "Id": 1015,
+                        "Name": "fasrfgargf",
+                        "Code": 30001,
+                        "ChildrenList": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "Id": 1011,
+                "Name": "sssg2",
+                "Code": 10001,
+                "ChildrenList": []
+              }
+            ]
+          },
+          {
+            "Id": 1008,
+            "Name": "ssg2",
+            "Code": 11,
+            "ChildrenList": []
+          },
+          {
+            "Id": 1009,
+            "Name": "ssg3",
+            "Code": 12,
+            "ChildrenList": []
+          }
+        ]
+      },
+      {
+        "Id": 1005,
+        "Name": "sg2",
+        "Code": 11,
+        "ChildrenList": []
+      },
+      {
+        "Id": 1006,
+        "Name": "sg3",
+        "Code": 12,
+        "ChildrenList": []
+      }
+    ]
+  },
+
+  {
+    "Id": 2,
+    "Name": "group2",
+    "Code": 11,
+    "ChildrenList": []
+  },
+
+  {
+    "Id": 1002,
+    "Name": "group3",
+    "Code": 12,
+    "ChildrenList": []
+  },
+
+  {
+    "Id": 1003,
+    "Name": "g4",
+    "Code": 13,
+    "ChildrenList": []
+  }
+]
