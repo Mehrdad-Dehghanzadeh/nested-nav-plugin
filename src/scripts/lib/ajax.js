@@ -1,3 +1,5 @@
+import attachEvents from './events';
+
 export function fetchItems(that, callback) {
   $.ajax(that.settings.ajax, {
     method: 'get',
@@ -6,6 +8,9 @@ export function fetchItems(that, callback) {
     .done(function (res) {
       const items = Array.isArray(res) ? res : res.data;
       callback(items, that.menu());
+    })
+    .done(function () {
+      attachEvents(that.settings);
     })
     .fail(function (error) {
       throw error;

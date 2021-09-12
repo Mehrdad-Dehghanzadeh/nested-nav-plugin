@@ -1,7 +1,9 @@
 import { fetchItems } from './ajax';
+import attachEvents from './events';
 
 export function setNavItemAjax(that) {
   fetchItems(that, createTree);
+  attachEvents(that.settings);
 }
 
 // export function setNavItem(element, navItems) {}

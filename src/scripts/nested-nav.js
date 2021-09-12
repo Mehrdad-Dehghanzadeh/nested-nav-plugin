@@ -11,6 +11,7 @@ import { setNavItemAjax, setNavItem } from './lib/navItem';
     justifyContent: 'space-between',
     textAlign: 'center',
     maxWidth: 'auto',
+    hover: false,
   };
 
   const NestedNav = function (element, options) {
