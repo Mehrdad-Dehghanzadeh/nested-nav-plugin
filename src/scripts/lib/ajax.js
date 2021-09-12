@@ -5,7 +5,7 @@ export function fetchItems(that, callback) {
   })
     .done(function (res) {
       const items = Array.isArray(res) ? res : res.data;
-      callback(items, $('.nested-nav'));
+      callback(items, that.menu());
     })
     .fail(function (error) {
       throw error;

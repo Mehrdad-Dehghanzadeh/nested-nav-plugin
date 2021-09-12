@@ -7,6 +7,10 @@ import { setNavItemAjax, setNavItem } from './lib/navItem';
   let defaults = {
     navItems: [],
     ajax: null,
+    direction: 'column',
+    justifyContent: 'space-between',
+    textAlign: 'center',
+    maxWidth: 'auto',
   };
 
   const NestedNav = function (element, options) {
@@ -18,7 +22,7 @@ import { setNavItemAjax, setNavItem } from './lib/navItem';
   $.extend(NestedNav.prototype, {
     init: function () {
       this.isAjax = !!this.settings.ajax;
-      setNav(this.element);
+      setNav(this.element, this.settings);
       if (this.isAjax) {
         setNavItemAjax(this);
       } else {
@@ -27,7 +31,11 @@ import { setNavItemAjax, setNavItem } from './lib/navItem';
     },
 
     nav: function () {
-      return this.element.find('.nested-nav');
+      return this.element.children('.nested-nav');
+    },
+
+    menu: function () {
+      return this.nav().children('.nested-nav-menu');
     },
   });
 

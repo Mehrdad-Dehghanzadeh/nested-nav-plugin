@@ -1,17 +1,21 @@
 [
   {
-    "Id": 1,
+    "id": 1,
     "title": "group1",
     "Code": 10,
     "children": [
       {
-        "Id": 1004,
+        "id": 1004,
         "title": "sg1",
         "Code": 10,
         "children": [
           {
-            "Id": 1007,
-            "title": "ssg1",
+            "id": 1007,
+            "link": {
+              "href": "/pasc/ir",
+              "id": "pasc",
+              "title": "ssg1"
+            },
             "Code": 10,
             "children": [
               {

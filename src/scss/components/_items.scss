@@ -1,0 +1,18 @@
+.nested-nav__item {
+  flex: 0 0 20%;
+  cursor: pointer;
+  position: relative;
+
+  &:hover > .nested-nav-submenu {
+    min-height: 50px;
+    padding: 10px 5px;
+    height: auto;
+    right: 20px;
+    width: calc(100% - 20px);
+  }
+
+  &-title {
+    padding: 15px 10px;
+    display: block;
+  }
+}

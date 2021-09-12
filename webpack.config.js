@@ -100,6 +100,7 @@ module.exports = (env, { mode }) => {
         filename: 'index.html',
         template: path.resolve(__dirname, 'demo/demo.html'),
         minify: false,
+        title: 'nested nav plugin',
         inject: false,
         scriptLoading: 'blocking',
       }),
