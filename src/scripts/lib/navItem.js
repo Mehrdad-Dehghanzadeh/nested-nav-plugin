@@ -16,6 +16,7 @@ function createTree(items, node) {
     if ('children' in item && item.children.length) {
       const subNav = $('<ul class="nested-nav-submenu"></ul>');
       template.append(subNav);
+      template.addClass('nested-nav__item-has-submenu');
       createTree(item.children, subNav);
     }
   }

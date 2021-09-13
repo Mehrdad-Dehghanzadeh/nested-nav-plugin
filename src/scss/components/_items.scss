@@ -7,13 +7,27 @@
 }
 
 .nested-nav__item {
-  flex: 0 0 20%;
   cursor: pointer;
   position: relative;
+  background-color: #001546;
+  margin: 3px 0;
+  border-radius: 5px;
 
   &-title {
-    padding: 15px 10px;
+    padding: 15px;
     display: block;
+  }
+
+  &-has-submenu {
+    &:before {
+      content: '+';
+      display: block;
+      float: right;
+      height: 100%;
+      margin: 10px 5px 0;
+      font-size: 18px;
+      font-weight: 900;
+    }
   }
 
   &--hovered {
@@ -23,8 +37,15 @@
   }
 
   &--active {
+    &:before {
+      content: '-';
+    }
     & > .nested-nav-submenu {
       @extend %show-submenu;
+    }
+
+    .nested-nav__item {
+      background-color: #0c2a71;
     }
   }
 }
