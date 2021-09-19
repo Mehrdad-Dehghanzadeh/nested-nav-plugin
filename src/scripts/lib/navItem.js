@@ -2,13 +2,13 @@ import { fetchItems } from './ajax';
 import attachEvents from './events';
 
 export function setNavItemAjax(that) {
-  fetchItems(that, createTree);
+  fetchItems(that, that.settings.success);
   attachEvents(that.settings);
 }
 
 // export function setNavItem(element, navItems) {}
 
-function createTree(items, node) {
+export function createTree(items, node) {
   for (const item of items) {
     const template = templateNavItem(item);
     node.append(template);

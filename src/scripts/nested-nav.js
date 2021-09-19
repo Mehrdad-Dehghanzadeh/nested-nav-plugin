@@ -1,5 +1,5 @@
 import { setNav } from './lib/nav';
-import { setNavItemAjax, setNavItem } from './lib/navItem';
+import { setNavItemAjax } from './lib/navItem';
 
 (function ($) {
   let pluginName = 'nestedNav';
@@ -12,11 +12,15 @@ import { setNavItemAjax, setNavItem } from './lib/navItem';
     textAlign: 'center',
     maxWidth: 'auto',
     hover: false,
+    success: function (res) {
+      return Array.isArray(res) ? res : res.data;
+    },
   };
 
   const NestedNav = function (element, options) {
     this.element = element;
     this.settings = $.extend(defaults, options);
+    console.log(this.settings);
     this.init();
   };
 

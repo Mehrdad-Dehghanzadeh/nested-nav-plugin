@@ -1,4 +1,5 @@
 import attachEvents from './events';
+import { createTree } from './navItem';
 
 export function fetchItems(that, callback) {
   $.ajax(that.settings.ajax, {
@@ -6,8 +7,12 @@ export function fetchItems(that, callback) {
     dataType: 'json',
   })
     .done(function (res) {
-      const items = Array.isArray(res) ? res : res.data;
-      callback(items, that.menu());
+      const items = callback(res);
+      if (Array.isArray(items)) {
+        createTree(items, that.menu());
+      } else {
+        throw new Error('success callback function must return Array type');
+      }
     })
     .done(function () {
       attachEvents(that.settings);
