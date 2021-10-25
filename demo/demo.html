@@ -9,15 +9,71 @@
 
   <body>
     <root>
-      <div
-        style="max-width: 300px; margin: 40px"
-        data-plugin_nested-nav='{"ajax": "./navItems.json"}'
-      ></div>
+      <section>
+        <h2>Ajax Items</h2>
+        <div
+          style="max-width: 300px; margin: 40px"
+          data-plugin_nested-nav='{"ajax":{ "url":"./navItems.json", "params": {}}}'
+        ></div>
+      </section>
+
+      <section>
+        <h2>static Items</h2>
+        <div id="static" style="max-width: 300px; margin: 40px"></div>
+      </section>
     </root>
 
     <%= htmlWebpackPlugin.tags.bodyTags %>
+
     <script type="text/javascript">
-      $(function () {});
+      var items = [
+        {
+          Id: 2,
+          title: 'group2',
+          Code: 11,
+          children: [],
+        },
+
+        {
+          Id: 1002,
+          title: 'group3',
+          Code: 12,
+          children: [
+            {
+              Id: 1022,
+              title: 'group3',
+              Code: 132,
+              children: [],
+            },
+            {
+              Id: 1032,
+              title: 'group12',
+              Code: 122,
+              children: [
+                {
+                  Id: 10322,
+                  title: 'group123',
+                  Code: 12333,
+                  children: [],
+                },
+              ],
+            },
+          ],
+        },
+
+        {
+          Id: 1003,
+          title: 'g4',
+          Code: 13,
+          children: [],
+        },
+      ];
+
+      $(function () {
+        $('#static').nestedNav({
+          navItems: items,
+        });
+      });
     </script>
   </body>
 </html>

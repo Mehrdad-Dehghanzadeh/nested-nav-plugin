@@ -1,5 +1,5 @@
 import { setNav } from './lib/nav';
-import { setNavItemAjax } from './lib/navItem';
+import { setNavItemAjax, setNavItem } from './lib/navItem';
 
 (function ($) {
   let pluginName = 'nestedNav';
@@ -19,28 +19,19 @@ import { setNavItemAjax } from './lib/navItem';
 
   const NestedNav = function (element, options) {
     this.element = element;
-    this.settings = $.extend(defaults, options);
-    console.log(this.settings);
+    this.settings = $.extend({}, defaults, options);
     this.init();
   };
 
   $.extend(NestedNav.prototype, {
     init: function () {
       this.isAjax = !!this.settings.ajax;
-      setNav(this.element, this.settings);
+      setNav(this);
       if (this.isAjax) {
         setNavItemAjax(this);
       } else {
-        // setNavItem(this.element, this.settings.navItems);
+        setNavItem(this);
       }
-    },
-
-    nav: function () {
-      return this.element.children('.nested-nav');
-    },
-
-    menu: function () {
-      return this.nav().children('.nested-nav-menu');
     },
   });
 
@@ -70,6 +61,7 @@ import { setNavItemAjax } from './lib/navItem';
       }
     });
   };
+
   $[pluginName] = NestedNav;
 })($);
 

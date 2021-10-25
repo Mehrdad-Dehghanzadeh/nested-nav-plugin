@@ -1,12 +1,18 @@
 import { fetchItems } from './ajax';
+import { checkItems } from './utils';
 import attachEvents from './events';
 
 export function setNavItemAjax(that) {
   fetchItems(that, that.settings.success);
-  attachEvents(that.settings);
 }
 
-// export function setNavItem(element, navItems) {}
+export function setNavItem(that) {
+  const message = 'navItems Must Be Array';
+  if (checkItems(that.settings.navItems, message)) {
+    createTree(that.settings.navItems, that._menu);
+    attachEvents(that);
+  }
+}
 
 export function createTree(items, node) {
   for (const item of items) {

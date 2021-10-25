@@ -2,8 +2,7 @@
   min-height: 50px;
   padding: 10px 5px;
   height: auto;
-  right: 25px;
-  width: calc(100% - 25px);
+  width: calc(100% - 15px);
 }
 
 .nested-nav__item {
@@ -24,7 +23,7 @@
       display: block;
       float: right;
       height: 100%;
-      margin: 10px 5px 0;
+      margin: 13px 5px 0;
       font-size: 18px;
       font-weight: 900;
     }
